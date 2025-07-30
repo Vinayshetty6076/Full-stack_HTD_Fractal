@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Second HTML</title>
+    </head>
+    <body>
+        <a href="first.html">
+        Go to first.html File
+        </a>
+
+        <img src="./img/img_not_available.png" width="150px" height="120px" />
+        <br /><!-- Line break -->
+        <br />
+        <br />
+        <hr />
+        <h1> SignUp Form </h1>
+        <form method="post">
+            <div>
+            <span> Name</span>
+            <input type="text" name="user_name" id="user_name" required />
+            </div>
+            <div>
+                <span>Email</span>
+                <input type="email" name="user_email" id="user_email" required />
+            </div>
+            <div>
+                <span>Address</span>
+                <textarea rows="6" cols="40"></textarea>
+            </div>
+            <div>
+                <span>Gender</span>
+                <input type="radio" name="user_gender" /> Male
+                <input type="radio" name="user_gender" /> Female
+                <input type="radio" name="user_gender" /> Others
+            </div>
+            <div>
+                <span>Hobby</span>
+                <input type="checkbox" name="user_hobby1" /> Gardening
+                <input type="checkbox" name="user_hobby1" /> Cricket
+                <input type="checkbox" name="user_hobby1" /> Cooking
+            </div>
+            <div>
+                <span>Country</span>
+                <select>
+                    <option value="">Select Country</option>
+                    <option value="ind">India</option>
+                    <option value="us">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="aus">Aus</option>
+                </select>
+            </div>
+            <div>
+                <!-- <input type="submit"></input> -->
+                <button>Submit</button>
+            </div>
+        </form>
+    </body>
+</html>

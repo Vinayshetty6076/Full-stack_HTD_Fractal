@@ -12,12 +12,7 @@
           <table width="100%" border="0">
             <tr>
               <td align="left" width="20%">
-                <img
-                  src="C:\Users\User\Documents\Fractal_assessment\Full-stack_HTD_Fractal\assessment\Day_one\img\logo.png"
-                  alt="Logo"
-                  width="100"
-                  height="auto"
-                />
+                <img src="C:\Users\User\Documents\Fractal_assessment\Full-stack_HTD_Fractal\assessment\Day_one\img\logo.png" alt="Logo" width="100" height="auto" />
               </td>
               <td align="center">Header</td>
               <td align="right" width="30%">
@@ -40,107 +35,88 @@
           <b>Right Panel</b><br /><br />
 
           <!-- User Registration Form -->
-          <table border="1" align="center" cellpadding="10">
+         <table border="1" align="center" cellpadding="10">
+    <tr>
+        <td colspan="2" align="center"><b>User Registration Form</b></td>
+    </tr>
+    <tr>
+        <td>
+            <form action="thankyou.html" method="get">
+                <table cellpadding="5">
+                    <tr>
+                        <td>
+                            First Name:<br />
+                            <input type="text" name="fname" required />
+                        </td>
+                        <td>
+                            Last Name:<br />
+                            <input type="text" name="lname" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Gender:<br />
+                            <input type="radio" name="gender" value="Male" required /> Male
+                            <input type="radio" name="gender" value="Female" required /> Female
+                            <input type="radio" name="gender" value="Other" required /> Other
+                        </td>
+                        <td>
+                            Country:<br />
+                            <select name="country" required>
+                                <option value="">--Select--</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="Canada">Canada</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Comment:<br />
+                            <textarea name="comment" rows="4" cols="60"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Password:<br />
+                            <input type="password" name="pcode" required />
+                        </td>
+                        <td>
+                            Confirm Password:<br />
+                            <input type="password" name="pcode" required />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+      <!-- Footer -->
+      <tr>
+        <td colspan="4">
+          <table width="100%" border="0">
             <tr>
-              <td colspan="2" align="center"><b>User Registration Form</b></td>
-            </tr>
-            <tr>
-              <td>
-                <form action="thankyou.html" method="get">
-                  <table cellpadding="5">
-                    <tr>
-                      <td>
-                        First Name:<br />
-                        <input type="text" name="fname" required />
-                      </td>
-                      <td>
-                        Last Name:<br />
-                        <input type="text" name="lname" required />
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        Gender:<br />
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="Male"
-                          required
-                        />
-                        Male
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="Female"
-                          required
-                        />
-                        Female
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="Other"
-                          required
-                        />
-                        Other
-                      </td>
-                      <td>
-                        Country:<br />
-                        <select name="country" required>
-                          <option value="">--Select--</option>
-                          <option value="India">India</option>
-                          <option value="USA">USA</option>
-                          <option value="UK">UK</option>
-                          <option value="Canada">Canada</option>
-                        </select>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td colspan="2">
-                        Comment:<br />
-                        <textarea name="comment" rows="4" cols="60"></textarea>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        Password:<br />
-                        <input type="password" name="pcode" required />
-                      </td>
-                      <td>
-                        Confirm Password:<br />
-                        <input type="password" name="pcode" required />
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td colspan="2" align="center">
-                        <input type="submit" value="Submit" />
-                      </td>
-                    </tr>
-                  </table>
-                </form>
+              <td align="left" width="5%">@CopyRight2025</td>
+              <td align="center" width="70%">Footer</td>
+              <td align="right">
+                <a href="day1.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="contact.html">Contact Us</a>
               </td>
             </tr>
           </table>
-
-          <!-- Footer -->
-          <tr>
-            <td colspan="4">
-              <table width="100%" border="0">
-                <tr>
-                  <td align="left" width="5%">@CopyRight2025</td>
-                  <td align="center" width="70%">Footer</td>
-                  <td align="right">
-                    <a href="day1.html">Home</a> |
-                    <a href="about.html">About Us</a> |
-                    <a href="contact.html">Contact Us</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
         </td>
       </tr>
     </table>

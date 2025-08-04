@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submitted Info</title>
+</head>
+<body>
+  <h2>Submitted Contact Details</h2>
+  <div id="output"></div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('contactData'));
+
+    if (data) {
+      document.getElementById('output').innerHTML = `
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Mobile:</strong> ${data.mobile}</p>
+        <p><strong>Address:</strong> ${data.address}</p>
+        <p><strong>Query Type:</strong> ${data.queryType}</p>
+      `;
+    } else {
+      document.getElementById('output').innerHTML = `<p>No data found.</p>`;
+    }
+  </script>
+</body>
+</html>

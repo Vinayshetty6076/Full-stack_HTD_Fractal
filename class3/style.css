@@ -1,0 +1,45 @@
+body{
+    
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: top left;
+}
+
+.div-position{
+    width: 200px;
+    height: 220px;
+    border: 1px solid #000;
+    background-color: antiquewhite;
+    position: sticky;
+    /*
+    position: relative / fixed / absolute / sticky
+    */
+    left:50px;
+    top: 60px;
+}
+
+.div1{
+    width: 200px;
+    height:200px;
+    float:left;
+    border: 1px solid #000;
+    margin:20px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.upper-case{
+    text-transform: uppercase;
+    
+}
+.my-para{
+    text-align: justify;
+    overflow-y: scroll;
+    height:180px;
+}
+.lower-case{
+    text-transform: lowercase;
+}
+.sentence-case{
+    text-transform: capitalize;
+    text-align: right;
+}

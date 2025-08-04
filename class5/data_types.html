@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Data Types</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body onload="chkDataTypes()">
+    <div>
+      <h1>Primitive</h1>
+      <ul>
+        <li>Number</li>
+        <li>string</li>
+        <li>boolean</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>symbol</li>
+      </ul>
+    </div>
+    <div>
+      <h1>Non Primitive</h1>
+      <ul>
+        <li>Object</li>
+        <li>Array</li>
+      </ul>
+    </div>
+    <hr />
+    <form onsubmit="return handleSubmit()">
+        <div id="error_container">
+        </div>
+      <div>
+        User Name:
+        <input type="text" name="user_name" id="user_name" required onchange="checkLength()" />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="data_types.js"></script>
+  </body>
+</html>

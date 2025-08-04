@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="first.css" />
+  </head>
+  <body onload="bodyLoad()">
+    <div
+      id="first_div"
+      class="my-div"
+      onmouseover="someAnimation(true)"
+      onmouseout="someAnimation(false)"
+    >
+      Div1!
+    </div>
+    <div id="second_div" class="my-div">Div2!</div>
+
+    <button id="my_btn" onclick="appendData()">Div1</button>
+    <button id="my_btn2" onclick="divdata2()">Div2</button>
+    <br /><br />
+    <div>
+      <form onsubmit="frmSubmit()">
+        <input type="text" id="my_txtbox" onkeyup="captureTxt(this)" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="first.js"></script>
+  </body>
+</html>

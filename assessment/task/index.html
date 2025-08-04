@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label>Name:</label><br />
+      <input type="text" id="name" required /><br /><br />
+
+      <label>Email ID:</label><br />
+      <input type="email" id="email" required /><br /><br />
+
+      <label>Mobile No:</label><br />
+      <input type="text" id="mobile" maxlength="10" required /><br /><br />
+
+      <label>Address:</label><br />
+      <input type="text" id="address" required /><br /><br />
+
+      <label>Queries:</label><br />
+      <select id="queryType" required>
+        <option value="">--Select--</option>
+        <option>New Product</option>
+        <option>Business Query</option>
+        <option>Events</option>
+        <option>AI Projects</option>
+        <option>New Features</option></select
+      ><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const mobile = document.getElementById("mobile").value.trim();
+          const address = document.getElementById("address").value.trim();
+          const queryType = document.getElementById("queryType").value;
+
+          if (!isNaN(name) || name.length < 2) {
+            alert("Name must be characters and at least 2 letters long.");
+            return;
+          }
+
+          if (!email.includes("@") || !email.includes(".")) {
+            alert("Please enter a valid email.");
+            return;
+          }
+
+          if (isNaN(mobile) || mobile.length !== 10) {
+            alert("Mobile number must be exactly 10 digits.");
+            return;
+          }
+
+          if (address === "") {
+            alert("Address is required.");
+            return;
+          }
+
+          if (queryType === "") {
+            alert("Please select a query type.");
+            return;
+          }
+
+          const formData = {
+            name,
+            email,
+            mobile,
+            address,
+            queryType,
+          };
+
+          localStorage.setItem("contactData", JSON.stringify(formData));
+          window.location.href = "display.html"; // redirect to new page
+        });
+    </script>
+  </body>
+</html>

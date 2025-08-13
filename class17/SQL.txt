@@ -1,0 +1,100 @@
+USE sakila;
+
+-- SQL to count the common last names from the actor table
+SELECT 
+COUNT(last_name) AS Total_count, last_name 
+FROM actor GROUP BY last_name ORDER BY COUNT(last_name) DESC;
+
+-- SQL to grt records in which address2 column has null value from address table
+SELECT *  FROM address WHERE address2 IS null;
+
+-- SQL TO FIND THOSE RECORDS IN WHICH PHONE COLUMN HAS 10 DIGITS FROM address 
+-- TABLE.
+-- SELECT length(district), district from address;
+SELECT * FROM address WHERE length(phone) = 10;
+
+-- SQL TO FETCH ONLY THOSE RECORDS IN WHICH postal_code has more than 4 digits
+-- from address table
+select * from address where length(postal_code)>4;
+
+-- SQL to get records of below district from address table.
+-- Andhra Pradesh
+-- Buenos Aires
+-- California
+
+-- address | address2 | district | *city name | postal_code
+SELECT 
+a.address, a.address2, a.district, a.city_id, a.postal_code,
+b.city
+FROM 
+address a
+INNER JOIN
+city b
+ON a.city_id = b.city_id 
+WHERE 
+a.district IN ('Andhra Pradesh', 'Buenos Aires', 'California')
+ORDER BY district;
+
+-- SQL to fetch city name and its corresponding country 
+-- tables: city and country
+
+SELECT 
+a.country,
+b.city
+FROM 
+country a LEFT JOIN city b
+ON a.country_id = b.country_id
+ORDER BY a.country;
+
+-- Using inner join, 
+ -- from customer table, print full name, email
+ -- from address table, print corrosponding address, district and postal_code
+ -- from city table, print city 
+select CONCAT(a.first_name, ' ', a.last_name) AS full_name, a.email,
+b.address, b.district, b.postal_code, c.city
+FROM 
+customer a LEFT JOIN address b ON a.address_id = b.address_id 
+LEFT JOIN city c ON b.city_id = c.city_id order by full_name;
+
+-- -------------------------------------------------------------
+-- Write SQL to print details of the actors whose first_name ends with 'a' and
+-- it contains 4 alphabets; Table: actor. 
+
+select * from actor where  first_name like '%a' and length(first_name)=4;
+
+-- From film table, fetch all records in which rental_rate is greater than 2.00 and 
+-- less than 5.00
+SELECT * FROM film WHERE rental_rate BETWEEN 2.01 AND 4.99 order by rental_rate;
+
+-- Write an SQL to show only odd rows from customer table.
+SELECT * FROM customer WHERE customer_id % 2 <>0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

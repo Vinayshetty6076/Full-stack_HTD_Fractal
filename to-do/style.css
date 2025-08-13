@@ -1,0 +1,160 @@
+:root {
+  --border:#1a1a1a;
+  --green:#28a745;
+  --red:#d9534f;
+  --muted:#6b7280;
+}
+
+* {
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+body {
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f7f7f7;
+  padding:24px;
+}
+
+.frame {
+  width:min(900px,95vw);
+  border:4px solid var(--border);
+  background:#fff;
+  padding:18px 18px 28px;
+  border-radius:14px;
+}
+
+.panel {
+  border:4px solid var(--border);
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:24px;
+  background:#fff;
+}
+
+.title {
+  font-weight:700;
+  margin:0 0 14px 0;
+}
+
+.row {
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:20px; /* Increased space between label and input/button */
+  align-items:center;
+}
+
+.row + .row {
+  margin-top:18px; /* More vertical space between rows */
+}
+
+input[type="text"] {
+  padding:14px 16px; /* More padding for better feel */
+  font-size:1rem;
+  border:3px solid var(--border);
+  border-radius:8px;
+  width:100%;
+}
+
+.btn {
+  display:inline-block;
+  padding:12px 20px; /* Taller, more comfortable button */
+  border:3px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .05s ease-in-out;
+}
+
+.btn:active {
+  transform:translateY(1px);
+}
+
+.btn-add {
+  width:140px; /* Wider button */
+}
+
+.hint {
+  color:#09c;
+  font-weight:700;
+}
+
+.list-panel {
+  border:4px solid var(--border);
+  border-radius:12px;
+  padding:18px;
+  background:#fff;
+}
+
+ol {
+  margin:0;
+  padding-left:28px;
+}
+
+li {
+  display:grid;
+  grid-template-columns:auto 1fr auto auto;
+  align-items:center;
+  gap:14px;
+  padding:8px 10px;
+  border-radius:10px;
+}
+
+li + li {
+  margin-top:6px;
+}
+
+.task-text {
+  font-weight:700;
+}
+
+.task-text.added {
+  color:var(--green);
+  animation:flash 850ms ease-out;
+}
+
+@keyframes flash {
+  0% { background:rgba(40,167,69,.18); }
+  100% { background:transparent; }
+}
+
+.remove {
+  color:var(--red);
+  font-weight:700;
+  cursor:pointer;
+  border:none;
+  background:transparent;
+}
+
+.status {
+  color:var(--green);
+  font-weight:700;
+  min-width:48px;
+  text-align:left;
+  visibility:hidden;
+}
+
+.done .task-text {
+  color:#111;
+  text-decoration:line-through;
+  font-weight:600;
+}
+
+.done .status {
+  visibility:visible;
+}
+
+.muted {
+  color:var(--muted);
+}
+
+.controls {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}

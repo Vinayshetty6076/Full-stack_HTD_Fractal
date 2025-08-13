@@ -1,0 +1,79 @@
+use orbus;
+select * from users;
+SELECT * FROM user_address;
+
+-- view : vitual table
+
+CREATE VIEW user_info AS
+SELECT 
+a.email, a.mobile, concat(a.first_name,' ',a.last_name) AS name,  
+b.house_no, b.locality, b.land_mark, b.pin_code, b.city
+FROM 
+users a INNER JOIN user_address b
+ON a.id = b.user_id
+WHERE a.user_type = 2;
+
+select * from user_info;
+
+
+-- -------------------------------------------------------------------
+
+-- stored procedure
+DELIMITER $$
+
+CREATE PROCEDURE userInfo()
+BEGIN
+
+SELECT 
+a.email, a.mobile, concat(a.first_name,' ',a.last_name) AS name,  
+b.house_no, b.locality, b.land_mark, b.pin_code, b.city
+FROM 
+users a INNER JOIN user_address b
+ON a.id = b.user_id
+WHERE a.user_type = 2;
+
+END $$
+
+DELIMITER ;
+
+CALL userInfo();
+
+-- ----------------------------------------------------------------------------------
+-- stored procedure
+DELIMITER $$
+
+CREATE PROCEDURE dynamicUserInfo(IN userType int)
+BEGIN
+
+SELECT 
+a.email, a.mobile, concat(a.first_name,' ',a.last_name) AS name,  
+b.house_no, b.locality, b.land_mark, b.pin_code, b.city
+FROM 
+users a INNER JOIN user_address b
+ON a.id = b.user_id
+WHERE a.user_type = userType;
+
+END $$
+
+DELIMITER ;
+
+CALL dynamicUserInfo(1);
+CALL dynamicUserInfo(2);
+
+-- ------------------------------------------------------------------------------------------
+
+-- stored procedure
+
+DELIMITER $$
+CREATE PROCEDURE dynamicUserInfo2(IN userEmail varchar(100), OUT userName varchar(100))
+BEGIN
+SELECT CONCAT(first_name,' ', last_name) 
+FROM users 
+WHERE email = userEmail;
+END $$
+DELIMITER ;
+
+CALL dynamicUserInfo2('user1@me.in',@name);
+
+-- select @name AS FULL_NAME
+
